@@ -1,5 +1,6 @@
 import './App.css'
 import About from './components/About';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Resources from './components/Resources';
 import SongPicker from './components/SongPicker';
@@ -25,6 +26,7 @@ function App() {
         </div>
         <SongPicker />
       </div>
+      <Footer />
     </>
   )
 }

@@ -2,7 +2,11 @@ import './Navbar.css'
 function Navbar() {
     return (
         <div className="navcontainer">
-            Cat ft logo, and links to different parts of page
+            <img src="" alt="logo"></img>
+            <button type="button">About</button>
+            <button type="button">Search</button>
+            <button type="button">Resources</button>
+            <button type="button">Song Picker</button>
         </div>
     );
 }
