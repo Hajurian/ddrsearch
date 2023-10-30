@@ -1,20 +1,26 @@
+.container {
+    position:relative;
+    width:85%;
+    margin-left:7.5%;
+}
 .aboutbar {
     display:flex;
     flex-direction: row;
-    width:100vw;
+    width:100%;
     height:450px;
 
 }
 .searchcontent {
-    width:50vw;
+    width:50%;
     height:inherit;
     border:1px solid green;
 }
 .resourcebar {
-    width:100vw;
+    width:100%;
     display:flex;
     flex-direction: row;
 }
-.image {
-    width:50vw;
+.resourcebar .image {
+    width:50%;
+    border:1px solid purple;
 }
