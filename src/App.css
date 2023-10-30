@@ -1,0 +1,20 @@
+.aboutbar {
+    display:flex;
+    flex-direction: row;
+    width:100vw;
+    height:450px;
+
+}
+.searchcontent {
+    width:50vw;
+    height:inherit;
+    border:1px solid green;
+}
+.resourcebar {
+    width:100vw;
+    display:flex;
+    flex-direction: row;
+}
+.image {
+    width:50vw;
+}

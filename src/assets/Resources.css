@@ -1,0 +1,7 @@
+.resourcecontainer {
+    width:50vw;
+    height:100px;
+    border:1px solid orange;
+    display:flex;
+    flex-direction: row;
+}
