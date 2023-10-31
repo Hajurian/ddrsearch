@@ -3,3 +3,8 @@
     height:inherit;
     border:1px solid red;
 }
+.aboutcontent {
+    border:1px solid black;
+    width:50%;
+    margin:2.5rem auto;
+}

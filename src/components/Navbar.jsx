@@ -3,10 +3,10 @@ function Navbar() {
     return (
         <div className="navcontainer">
             <img src="" alt="logo"></img>
-            <button type="button">About</button>
-            <button type="button">Search</button>
-            <button type="button">Resources</button>
-            <button type="button">Song Picker</button>
+            <button type="button"><a href="#anchorabout">About</a></button>
+            <button type="button"><a href="#anchorsearch">Search</a></button>
+            <button type="button"><a href="#anchorresource">Resources</a></button>
+            <button type="button"><a href="#anchorsongpicker">Song Picker</a></button>
         </div>
     );
 }

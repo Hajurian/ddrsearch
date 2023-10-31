@@ -2,7 +2,10 @@ import './About.css'
 function About() {
     return (
         <div className="aboutcontainer">
-            About cat
+            <div className="aboutcontent">
+                <h1>About</h1>
+                <p>This site is dedicated to providing all information DDR related in one single place. Add more text later... todo</p>
+            </div>
         </div>
     );
 }

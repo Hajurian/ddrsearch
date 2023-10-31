@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Resources from './components/Resources';
 import SongPicker from './components/SongPicker';
 import ScrapedData from './songdata.json'
+import Babylon from './assets/babylon.png'
+import Search from './components/Search';
 
 function App() {
   // let data = []; //used later
@@ -14,17 +16,24 @@ function App() {
     <>
       <div className="container">
         <Navbar />
+        <span id="anchorabout"></span>
         <div className="aboutbar">
           <About />
+          <span id="anchorsearch"></span>
           <div className="searchcontent">
-            Search cat
+            <Search />
           </div>
         </div>
+        <span id="anchorresource"></span>
         <div className="resourcebar">
-          <div className="image">image of Baby Lon</div>
+          <div className="image"><img src={Babylon}></img></div>
           <Resources />
         </div>
-        <SongPicker />
+        <span id="anchorsongpicker"></span>
+        <div>
+          <SongPicker />
+        </div>
+        
       </div>
       <Footer />
     </>
