@@ -4,7 +4,7 @@ function About() {
         <div className="aboutcontainer">
             <div className="aboutcontent">
                 <h1>About</h1>
-                <p>This site is dedicated to providing all information DDR related in one single place. Add more text later... todo</p>
+                <p className='text'>This site is dedicated to providing all information DDR related in one single place. Add more text later... todo</p>
             </div>
         </div>
     );

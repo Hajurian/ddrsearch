@@ -22,9 +22,11 @@ function Search() {
                 }
             }
         }
+        document.getElementById('searchinput').value = '';
     }
     return (
         <div className="searchcontainer">
+            <h1>Song Search</h1>
             <div className="search">
                 <div className="icon" onClick={() => {
                     document.querySelector('.search').classList.toggle('active');
@@ -34,7 +36,6 @@ function Search() {
                 }}></input></div>
                 <span className='submit' onClick={handleSubmit}></span>
             </div>
-            <p>{search}</p>
         </div>
     );
 }

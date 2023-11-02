@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Resources from './components/Resources';
 import SongPicker from './components/SongPicker';
-import ScrapedData from './songdata.json'
 import Babylon from './assets/babylon.png'
 import Search from './components/Search';
 
@@ -19,15 +18,16 @@ function App() {
         <span id="anchorabout"></span>
         <div className="aboutbar">
           <About />
-          <span id="anchorsearch"></span>
+        </div>
+        <span id="anchorsearch"></span>
           <div className="searchcontent">
             <Search />
           </div>
-        </div>
         <span id="anchorresource"></span>
         <div className="resourcebar">
-          <div className="image"><img src={Babylon}></img></div>
           <Resources />
+          <div className="image"><img src={Babylon}></img></div>
+          
         </div>
         <span id="anchorsongpicker"></span>
         <div>

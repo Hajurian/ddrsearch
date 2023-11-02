@@ -1,10 +1,19 @@
 .aboutcontainer {
-    width:50%;
+    width:100%;
     height:inherit;
     border:1px solid red;
 }
 .aboutcontent {
     border:1px solid black;
-    width:50%;
+    width:85%;
     margin:2.5rem auto;
+}
+.aboutcontent h1 {
+    font-size:4rem;
+}
+.aboutcontent .text {
+    font-size: 1.5rem;
+    position: relative;
+    line-height: 1.2;
+    width:50%;
 }
