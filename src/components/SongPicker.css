@@ -1,5 +1,7 @@
 .songpickercontainer {
-    width:100%;
-    height:600px;
+    width:85%;
+    height:inherit;
     border:1px solid brown;
+    margin:0 auto;
+    
 }

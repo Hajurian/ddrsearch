@@ -8,7 +8,10 @@
 .aboutcontent {
     position: relative;
     width:85%;
-    margin:2.5rem auto;
+    margin-top:2.5rem;
+    margin-bottom:2.5rem;
+    margin-left:10%;
+    margin-right:5%;
 }
 .aboutcontent h1 {
     font-size:4rem;
@@ -17,7 +20,15 @@
 .aboutcontent .text {
     font-size: 1.5rem;
     position: relative;
-    line-height: 1.2;
+    line-height: 1.8rem;
     width:45%;
     color:#2a2d34;
+}
+
+.aboutcontainer img {
+    position: relative;
+    transform: scale(1.1);
+    right:15%;
+    top:0;
+    opacity: 0.75;
 }

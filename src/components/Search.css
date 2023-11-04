@@ -3,9 +3,10 @@
     height: fit-content;
     padding: 20px;
     position: relative;
-    margin: 2rem auto;
+    margin: 0 auto;
     border: 1px solid black;
-    background-color: inherit;
+    background-color: #a0dde6;
+    border-radius:25px;
     display: flex;
     flex-direction: column;
     justify-content: center;

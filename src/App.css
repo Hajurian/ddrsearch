@@ -3,29 +3,44 @@
     width:100%;
     margin-left:0%;
 }
+.invisible {
+    opacity: 0;
+    filter:blur(5px);
+    transition:all 1s;
+}
+.show {
+    opacity: 1;
+    filter:blur(0);
+}
 .aboutbar {
     display:flex;
     width:100%;
-    height:500px;
+    height:80vh;
 }
 .searchcontent {
     position: relative;
     width:100%;
     height:fit-content;
-    border:1px solid green;
-    background-color: lightblue;
+    background-color: #a0dde6;
+    padding:4rem 0;
 }
 .resourcebar {
     width:100%;
     display:flex;
     flex-direction: row;
-    background-color: lightgray;
+    background-color: #c9e2e3;
     z-index: 100;
 }
 .resourcebar .image {
     width:50%;
-    border:1px solid purple;
     z-index: 100;
+}
+.songpickerbar {
+    height:650px;
+    width:100%;
+    background-color: #c9e2e3;
+    padding-top:2.5rem;
+    padding-bottom: 2.5rem;
 }
 #anchorabout {
     display: block;
