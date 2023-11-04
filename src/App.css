@@ -20,10 +20,12 @@
     display:flex;
     flex-direction: row;
     background-color: lightgray;
+    z-index: 100;
 }
 .resourcebar .image {
     width:50%;
     border:1px solid purple;
+    z-index: 100;
 }
 #anchorabout {
     display: block;

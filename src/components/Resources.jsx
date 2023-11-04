@@ -2,39 +2,37 @@ import './Resources.css'
 import Slide from './Slide';
 import Remywiki from '/src/assets/remywiki.png'
 import A3logo from '/src/assets/A3logo.png'
+import Docs from '/src/assets/docs.png'
+import Youtube from '/src/assets/Youtube.png'
 
 function Resources() {
     const slideStuff = [{
         title: "Remywiki",
-        image: {Remywiki},
         description: "fish",
         direction: "left",
-        link:"",
-        key:"1"
+        link: "https://remywiki.com/DanceDanceRevolution_Information",
+        key: "1"
     },
     {
-        title:"DDR official page",
-        image: "",
+        title: "DDR official page",
         description: "cat",
         direction: "active",
-        link:"",
-        key:"2"
+        link: "https://p.eagate.573.jp/game/ddr/ddra3/p/info/index.html",
+        key: "2"
     },
     {
-        title:"Yuisin's Youtube",
-        image: "",
+        title: "Yuisin's Youtube",
         description: "dog",
         direction: "right",
-        link:"",
-        key:"3"
+        link: "https://www.youtube.com/@fumenity",
+        key: "3"
     },
     {
-        title:"Grand prix Setup Doc",
-        image: "",
+        title: "Grand prix Setup Doc",
         description: "banana",
         direction: "hidden",
-        link:"",
-        key:"4"
+        link: "https://docs.google.com/document/d/1FbZOxO50Vmxs33U44rIzEwtSMyqYGl1BJ-8GCg5s_b0/edit#",
+        key: "4"
     }]
     function buttonFunction(e) {
         const direction = e.target.classList[1];
@@ -97,10 +95,10 @@ function Resources() {
                         buttonFunction(e)
                     }}>&#8658;</button>
                     <ul>
-                        <Slide image= {Remywiki} link={slideStuff[0].link} title={slideStuff[0].title} description={slideStuff[0].description} direction={slideStuff[0].direction} key={slideStuff[0].key} />
-                        <Slide image= {A3logo} link={slideStuff[1].link} title={slideStuff[1].title} description={slideStuff[1].description} direction={slideStuff[1].direction} key={slideStuff[1].key} />
-                        <Slide image= {A3logo} link={slideStuff[2].link} title={slideStuff[2].title} description={slideStuff[2].description} direction={slideStuff[2].direction} key={slideStuff[2].key} />
-                        <Slide image= {A3logo} link={slideStuff[3].link} title={slideStuff[3].title} description={slideStuff[3].description} direction={slideStuff[3].direction} key={slideStuff[3].key} />
+                        <Slide image={Remywiki} link={slideStuff[0].link} title={slideStuff[0].title} description={slideStuff[0].description} direction={slideStuff[0].direction} key={slideStuff[0].key} />
+                        <Slide image={A3logo} link={slideStuff[1].link} title={slideStuff[1].title} description={slideStuff[1].description} direction={slideStuff[1].direction} key={slideStuff[1].key} />
+                        <Slide image={Youtube} link={slideStuff[2].link} title={slideStuff[2].title} description={slideStuff[2].description} direction={slideStuff[2].direction} key={slideStuff[2].key} />
+                        <Slide image={Docs} link={slideStuff[3].link} title={slideStuff[3].title} description={slideStuff[3].description} direction={slideStuff[3].direction} key={slideStuff[3].key} />
                     </ul>
                 </div>
             </div>
