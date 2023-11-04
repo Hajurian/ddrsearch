@@ -2,10 +2,11 @@ function Slide(props) {
     let classes = `slide ${props.direction}`
     return (
         <div className={classes}>
-            <img src="" alt="image"></img>
-            <h1>
-                {props.content}
-            </h1>
+            <div className="slidecontent">
+                <a href={props.link}><img src={props.image}></img></a>
+                <h1>{props.title}</h1>
+                <p>{props.description}</p>
+            </div>
         </div>
     );
 }

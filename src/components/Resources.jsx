@@ -1,8 +1,41 @@
 import './Resources.css'
 import Slide from './Slide';
+import Remywiki from '/src/assets/remywiki.png'
+import A3logo from '/src/assets/A3logo.png'
 
 function Resources() {
-
+    const slideStuff = [{
+        title: "Remywiki",
+        image: {Remywiki},
+        description: "fish",
+        direction: "left",
+        link:"",
+        key:"1"
+    },
+    {
+        title:"DDR official page",
+        image: "",
+        description: "cat",
+        direction: "active",
+        link:"",
+        key:"2"
+    },
+    {
+        title:"Yuisin's Youtube",
+        image: "",
+        description: "dog",
+        direction: "right",
+        link:"",
+        key:"3"
+    },
+    {
+        title:"Grand prix Setup Doc",
+        image: "",
+        description: "banana",
+        direction: "hidden",
+        link:"",
+        key:"4"
+    }]
     function buttonFunction(e) {
         const direction = e.target.classList[1];
         const slides = document.querySelectorAll('.slide');
@@ -35,7 +68,7 @@ function Resources() {
                     indexL = index - 1;
                 }
                 nextSlide = slides[index];
-                
+
             }
             indexPos.push(i);
         }
@@ -44,6 +77,7 @@ function Resources() {
                 indexH = indice;
             }
         })
+
         slides[indexH].classList.add('hidden');
         slides[indexL].classList.add('left');
         slides[indexR].classList.add('right');
@@ -63,10 +97,10 @@ function Resources() {
                         buttonFunction(e)
                     }}>&#8658;</button>
                     <ul>
-                        <Slide content="cat" direction="left" />
-                        <Slide content="fish" direction="active" />
-                        <Slide content="dog" direction="right" />
-                        <Slide content="banana" direction="hidden" />
+                        <Slide image= {Remywiki} link={slideStuff[0].link} title={slideStuff[0].title} description={slideStuff[0].description} direction={slideStuff[0].direction} key={slideStuff[0].key} />
+                        <Slide image= {A3logo} link={slideStuff[1].link} title={slideStuff[1].title} description={slideStuff[1].description} direction={slideStuff[1].direction} key={slideStuff[1].key} />
+                        <Slide image= {A3logo} link={slideStuff[2].link} title={slideStuff[2].title} description={slideStuff[2].description} direction={slideStuff[2].direction} key={slideStuff[2].key} />
+                        <Slide image= {A3logo} link={slideStuff[3].link} title={slideStuff[3].title} description={slideStuff[3].description} direction={slideStuff[3].direction} key={slideStuff[3].key} />
                     </ul>
                 </div>
             </div>

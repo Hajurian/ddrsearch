@@ -8,9 +8,6 @@ import Babylon from './assets/babylon.png'
 import Search from './components/Search';
 
 function App() {
-  // let data = []; //used later
-  // data.push(ScrapedData);
-  // console.log(data);
   return (
     <>
       <div className="container">
