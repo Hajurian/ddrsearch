@@ -1,8 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ScrapedData from '../songdata.json'
 import './Search.css'
 import Cards from './Cards';
 function Search() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('show')
+          } else {
+            entry.target.classList.remove('show')
+          }
+        })
+      })
+      useEffect(() => {
+        const hiddenElements = document.querySelectorAll('.invisible');
+        hiddenElements.forEach((el) => observer.observe(el))
+      }, [])
     const [search, setSearch] = useState("");
     const data = [];
     data.push({ ScrapedData });
@@ -27,8 +40,8 @@ function Search() {
     }
     return (
         <div className="searchcontainer">
-            <h1>Song Search</h1>
-            <div className="search">
+            <h1 className='invisible'>Song Search</h1>
+            <div className="search invisble">
                 <div className="icon" onClick={() => {
                     document.querySelector('.search').classList.toggle('active');
                 }}></div>
@@ -37,7 +50,7 @@ function Search() {
                 }}></input></div>
                 <span className='submit' onClick={handleSubmit}></span>
             </div>
-            <div className="carddisplay">
+            <div className="carddisplay invisible">
                 <Cards image="https://p.eagate.573.jp/game/ddr/ddra3/p/images/binary_jk.html?img=9i0q91lPPiO61b9P891O1i86iOP1I08O&kind=2" title="EGOISM 440" />
                 <Cards />
             </div>

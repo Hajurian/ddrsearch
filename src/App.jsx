@@ -6,42 +6,28 @@ import Resources from './components/Resources';
 import SongPicker from './components/SongPicker';
 import Babylon from './assets/babylon.png'
 import Search from './components/Search';
-import { useEffect } from 'react';
 
 function App() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('show')
-      } else {
-        entry.target.classList.remove('show')
-      }
-    })
-  })
-  useEffect(() => {
-    const hiddenElements = document.querySelectorAll('.invisible');
-    hiddenElements.forEach((el) => observer.observe(el))
-  }, [])
   return (
     <>
       <div className="container">
         <Navbar />
         <span id="anchorabout"></span>
-        <div className="aboutbar invisible">
+        <div className="aboutbar">
           <About />
         </div>
         <span id="anchorsearch"></span>
-          <div className="searchcontent invisible">
+          <div className="searchcontent">
             <Search />
           </div>
         <span id="anchorresource"></span>
-        <div className="resourcebar invisible">
+        <div className="resourcebar">
           <Resources />
           <div className="image"><img src={Babylon}></img></div>
           
         </div>
         <span id="anchorsongpicker"></span>
-        <div className="songpickerbar invisible">
+        <div className="songpickerbar">
           <SongPicker />
         </div>
         

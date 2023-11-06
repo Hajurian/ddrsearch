@@ -4,8 +4,22 @@ import Remywiki from '/src/assets/remywiki.png'
 import A3logo from '/src/assets/A3logo.png'
 import Docs from '/src/assets/docs.png'
 import Youtube from '/src/assets/Youtube.png'
+import { useEffect } from 'react';
 
 function Resources() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('show')
+          } else {
+            entry.target.classList.remove('show')
+          }
+        })
+      })
+      useEffect(() => {
+        const hiddenElements = document.querySelectorAll('.invisible');
+        hiddenElements.forEach((el) => observer.observe(el))
+      }, [])
     const slideStuff = [{
         title: "Remywiki",
         description: "A wiki site containing information for most Bemani games",
@@ -28,7 +42,7 @@ function Resources() {
         key: "3"
     },
     {
-        title: "Grand prix Setup Doc",
+        title: "Grand prix Setup",
         description: "A google document with detailed instruction on setting up DDR GP",
         direction: "hidden",
         link: "https://docs.google.com/document/d/1FbZOxO50Vmxs33U44rIzEwtSMyqYGl1BJ-8GCg5s_b0/edit#",
@@ -82,7 +96,7 @@ function Resources() {
         nextSlide.classList.add('active');
     }
     return (
-        <div className="resourcecontainer">
+        <div className="resourcecontainer invisible">
             <div className="resourcecontent">
                 <h1>
                     Resources
