@@ -21,20 +21,27 @@
     position: relative;
     width:100%;
     height:fit-content;
-    background-color: #a0dde6;
+    background: rgb(193,200,228);
+    background: radial-gradient(circle, rgba(193,200,228,1) 0%, rgba(145,199,200,1) 100%);
     padding:4rem 0;
 }
 .resourcebar {
     width:100%;
     display:flex;
     flex-direction: row;
-    background: rgb(193,200,228);
-    background: radial-gradient(circle, rgba(193,200,228,1) 0%, rgba(145,199,200,1) 100%);
+    background: rgb(160,221,230);
+    background: linear-gradient(90deg, rgba(160,221,230,1) 42%, rgba(96,160,208,1) 100%);
     z-index: 100;
 }
-.resourcebar .image {
-    width:50%;
+.resourcebar .image img{
+    position: absolute;
+    width:270px;
+    height:409px;
+    transform: scale(2.5);
     z-index: 100;
+    right:15%;
+    top:25%;
+
 }
 .songpickerbar {
     height:650px;

@@ -1,0 +1,10 @@
+.cardcontainer {
+    width:200px;
+    height:300px;
+    border:1px solid black;
+    border-radius:10px;
+    margin-bottom:25px;
+    margin-top:60px;
+    background: rgb(119,181,190);
+    background: radial-gradient(circle, rgba(119,181,190,1) 0%, rgba(63,68,169,1) 100%, rgba(86,128,233,1) 100%);
+}

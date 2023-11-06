@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ScrapedData from '../songdata.json'
 import './Search.css'
+import Cards from './Cards';
 function Search() {
     const [search, setSearch] = useState("");
     const data = [];
@@ -36,6 +37,7 @@ function Search() {
                 }}></input></div>
                 <span className='submit' onClick={handleSubmit}></span>
             </div>
+            <Cards />
         </div>
     );
 }
