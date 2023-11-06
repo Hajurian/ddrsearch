@@ -1,7 +1,8 @@
 .aboutcontainer {
     width:100%;
     height:inherit;
-    background-color: #c9e2e3;
+    background: rgb(193,200,228);
+    background: radial-gradient(circle, rgba(193,200,228,1) 0%, rgba(145,199,200,1) 100%);
     display:flex;
     overflow:hidden;
 }
@@ -19,9 +20,10 @@
 }
 .aboutcontent .text {
     font-size: 1.5rem;
+    font-weight:400;
     position: relative;
     line-height: 1.8rem;
-    width:45%;
+    width:60%;
     color:#2a2d34;
 }
 
@@ -29,7 +31,7 @@
     position: relative;
     transform: scale(1.1);
     right:15%;
-    top:0;
+    top:-5%;
     opacity: 0.75;
     transform: rotate(45deg);
     animation: arrowmove 2s infinite;

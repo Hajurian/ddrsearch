@@ -57,6 +57,10 @@
     font-size:2.5rem;
     text-align: center;
 }
+.slidecontent p {
+    font-size:1.5rem;
+    color: #C1C8E4;
+}
 .slidecontent img {
     width:250px;
     height:200px;

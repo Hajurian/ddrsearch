@@ -5,6 +5,7 @@ function SongPicker() {
             <div className="songpickertextcontainer">
                 <h1>Song Picker</h1>
                 <p>stuff stuff stuff</p>
+                
             </div>
         </div>
     )

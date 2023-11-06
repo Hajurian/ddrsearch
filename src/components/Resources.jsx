@@ -8,28 +8,28 @@ import Youtube from '/src/assets/Youtube.png'
 function Resources() {
     const slideStuff = [{
         title: "Remywiki",
-        description: "fish",
+        description: "A wiki site containing information for most Bemani games",
         direction: "left",
         link: "https://remywiki.com/DanceDanceRevolution_Information",
         key: "1"
     },
     {
         title: "DDR official page",
-        description: "cat",
+        description: "The official DDR A3 website",
         direction: "active",
         link: "https://p.eagate.573.jp/game/ddr/ddra3/p/info/index.html",
         key: "2"
     },
     {
         title: "Yuisin's Youtube",
-        description: "dog",
+        description: "Yuisin's YouTube channel where most DDR songs can be found",
         direction: "right",
         link: "https://www.youtube.com/@fumenity",
         key: "3"
     },
     {
         title: "Grand prix Setup Doc",
-        description: "banana",
+        description: "A google document with detailed instruction on setting up DDR GP",
         direction: "hidden",
         link: "https://docs.google.com/document/d/1FbZOxO50Vmxs33U44rIzEwtSMyqYGl1BJ-8GCg5s_b0/edit#",
         key: "4"
