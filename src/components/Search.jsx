@@ -17,7 +17,7 @@ function Search() {
             for (let songIndex = 0; songIndex < songList[version].length; songIndex++) {
 
                 if (songList[version][songIndex].title.toUpperCase().includes(search.toUpperCase())) {
-                    console.log(songList[version][songIndex].title);
+                    console.log(songList[version][songIndex].image);
                     console.log(version)
                     console.log(songIndex)
                 }
@@ -37,7 +37,10 @@ function Search() {
                 }}></input></div>
                 <span className='submit' onClick={handleSubmit}></span>
             </div>
-            <Cards />
+            <div className="carddisplay">
+                <Cards image="https://p.eagate.573.jp/game/ddr/ddra3/p/images/binary_jk.html?img=9i0q91lPPiO61b9P891O1i86iOP1I08O&kind=2" title="EGOISM 440" />
+                <Cards />
+            </div>
         </div>
     );
 }

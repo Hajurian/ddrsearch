@@ -1,10 +1,40 @@
 .cardcontainer {
-    width:200px;
-    height:300px;
+    width:250px;
+    height:350px;
     border:1px solid black;
     border-radius:10px;
     margin-bottom:25px;
+    margin-left:25px;
+    margin-right:25px;
     margin-top:60px;
     background: rgb(119,181,190);
     background: radial-gradient(circle, rgba(119,181,190,1) 0%, rgba(63,68,169,1) 100%, rgba(86,128,233,1) 100%);
+}
+.cardcontainer .title {
+    display:flex;
+    justify-content: center;
+    margin-top:15px;
+    color:white;
+    font-size:1.5rem;
+}
+.cardcontainer .topcard {
+    display: flex;
+    flex-direction: row;
+}
+.cardcontainer .topcard .cardtext {
+    display: flex;
+    flex-direction: column;
+    margin-top:1rem;
+    color:white;
+}
+.cardcontainer .thumbnail {
+    margin:25px;
+    border:1px solid black;
+
+}
+.cardcontainer h1 {
+    font-size:1.2rem;
+    font-weight: 300;
+    margin:0;
+    line-height: 1.5rem;
 }
