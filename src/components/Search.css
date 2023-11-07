@@ -4,7 +4,7 @@
     padding: 20px;
     position: relative;
     margin: 0 auto;
-    border: 1px solid black;
+    border: 1px solid #3f44a9;
     background: rgb(160,221,230);
     background: radial-gradient(circle, rgba(160,221,230,1) 18%, rgba(90,185,234,1) 100%);
     border-radius:25px;
@@ -50,7 +50,7 @@
     position: absolute;
     width:15px;
     height:15px;
-    border: 3px solid black;
+    border: 3px solid #3f44a9;
     border-radius:50%;
     transform: translate(-4px, -4px);
 }
@@ -59,7 +59,7 @@
     position: absolute;
     width:3px;
     height:12px;
-    background:black;
+    background:#3f44a9;
     transform: translate(6px, 6px) rotate(315deg);
 }
 .search .input {

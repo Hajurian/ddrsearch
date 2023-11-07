@@ -1,18 +1,20 @@
 .cardcontainer {
     width:250px;
     height:350px;
-    border:1px solid black;
+    border:1px solid #3f44a9;
     border-radius:10px;
     margin-bottom:25px;
     margin-left:25px;
     margin-right:25px;
     margin-top:60px;
-    background: rgb(119,181,190);
-    background: radial-gradient(circle, rgba(119,181,190,1) 0%, rgba(63,68,169,1) 100%, rgba(86,128,233,1) 100%);
+    background: rgb(157,191,219);
+    background: radial-gradient(circle, rgba(157,191,219,1) 0%, rgba(101,153,203,1) 100%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .cardcontainer .title {
     display:flex;
     justify-content: center;
+    padding:auto;
     margin-top:15px;
     color:white;
     font-size:1.5rem;
@@ -37,4 +39,31 @@
     font-weight: 300;
     margin:0;
     line-height: 1.5rem;
+}
+.cardcontainer .difficulties{
+    position: relative;
+    width:80%;
+    padding:20px;
+    /* border:1px solid black; */
+}
+.cardcontainer .difficulties h1 {
+    font-weight: 600;
+    padding: 5px 0;
+    color:white;
+    
+}
+#beginner {
+    color:#2272e3;
+}
+#basic {
+    color:#d9832e;
+}
+#difficult {
+    color:#d61e1e;
+}
+#expert {
+    color:#158c1d;
+}
+#challenge {
+    color:#c71ed6;
 }

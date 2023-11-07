@@ -54,9 +54,11 @@
 .songpickerbar {
     height:650px;
     width:100%;
-    background-color: #c9e2e3;
+    background: rgb(193,196,228);
+    background: radial-gradient(circle, rgba(193,196,228,1) 18%, rgba(128,198,235,1) 100%);
     padding-top:2.5rem;
     padding-bottom: 2.5rem;
+
 }
 #anchorabout {
     display: block;

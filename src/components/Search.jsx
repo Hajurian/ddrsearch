@@ -16,11 +16,12 @@ function Search() {
         const hiddenElements = document.querySelectorAll('.invisible');
         hiddenElements.forEach((el) => observer.observe(el))
       }, [])
+    const [searchedSongs, setSearchSongs] = useState([]);
+    let ss = [];
     const [search, setSearch] = useState("");
     const data = [];
     data.push({ ScrapedData });
     const songList = data[0].ScrapedData; //Song list use [][] to get version , song object and then .property you want
-    
 
 
     function handleSubmit(e) {
@@ -30,9 +31,10 @@ function Search() {
             for (let songIndex = 0; songIndex < songList[version].length; songIndex++) {
 
                 if (songList[version][songIndex].title.toUpperCase().includes(search.toUpperCase())) {
-                    console.log(songList[version][songIndex].image);
-                    console.log(version)
-                    console.log(songIndex)
+                    console.log(songList[version][songIndex]);
+                    ss.push(songList[version][songIndex]);
+                    setSearchSongs(ss);
+                    
                 }
             }
         }
@@ -51,8 +53,11 @@ function Search() {
                 <span className='submit' onClick={handleSubmit}></span>
             </div>
             <div className="carddisplay invisible">
-                <Cards image="https://p.eagate.573.jp/game/ddr/ddra3/p/images/binary_jk.html?img=9i0q91lPPiO61b9P891O1i86iOP1I08O&kind=2" title="EGOISM 440" />
-                <Cards />
+                {searchedSongs.map(song => {
+                    return(
+                        <Cards key={song.title} image={song.image} title={song.title} artist={song.artist}/>
+                    );
+                })}
             </div>
         </div>
     );

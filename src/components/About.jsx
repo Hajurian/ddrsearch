@@ -21,7 +21,7 @@ function About() {
                 <h1 className="invisiblemove">About</h1>
                 <p className='text invisiblemove'>This site is dedicated to providing all information DDR related in one single place. Made in ReactJS, this website contains everything from song searching to a song generator to useful links for any DDR player.</p>
             </div>
-            <img src={Arrow}></img>
+            <img src={Arrow} className='invisible'></img>
         </div>
     );
 }
