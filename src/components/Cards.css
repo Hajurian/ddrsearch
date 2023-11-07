@@ -1,15 +1,25 @@
 .cardcontainer {
     width:250px;
-    height:350px;
+    height:90px;
     border:1px solid #3f44a9;
     border-radius:10px;
     margin-bottom:25px;
     margin-left:25px;
     margin-right:25px;
-    margin-top:60px;
+    margin-top:40px;
     background: rgb(157,191,219);
     background: radial-gradient(circle, rgba(157,191,219,1) 0%, rgba(101,153,203,1) 100%);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow:hidden;
+    position: relative;
+    cursor:pointer;
+    transition: all .5s;
+}
+.cardcontainer:hover {
+    transform: translateY(-20px);
+}
+.cardcontainer.expand {
+    height:350px;
 }
 .cardcontainer .title {
     display:flex;
@@ -18,6 +28,7 @@
     margin-top:15px;
     color:white;
     font-size:1.5rem;
+    font-weight:600;
 }
 .cardcontainer .topcard {
     display: flex;
@@ -29,8 +40,13 @@
     margin-top:1rem;
     color:white;
 }
+
+.cardtext h1 {
+    padding-left:10px;
+    color: #2a2d34;
+}
 .cardcontainer .thumbnail {
-    margin:25px;
+    margin:10px;
     border:1px solid black;
 
 }
@@ -49,9 +65,14 @@
 .cardcontainer .difficulties h1 {
     font-weight: 600;
     padding: 5px 0;
-    color:white;
-    
+    color:#2a2d34;
+    cursor: pointer;
+    transition: color 0.4s;
 }
+.cardcontainer .difficulties h1:hover {
+    color:#7725fa;
+}
+
 #beginner {
     color:#2272e3;
 }

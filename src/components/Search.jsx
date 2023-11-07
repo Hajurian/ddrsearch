@@ -23,6 +23,13 @@ function Search() {
     data.push({ ScrapedData });
     const songList = data[0].ScrapedData; //Song list use [][] to get version , song object and then .property you want
 
+    document.addEventListener("keydown", (e) => {
+        
+        if (e.code == 'Enter' && search.length > 0) {
+
+            handleSubmit(e);
+        }
+    })
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -31,7 +38,6 @@ function Search() {
             for (let songIndex = 0; songIndex < songList[version].length; songIndex++) {
 
                 if (songList[version][songIndex].title.toUpperCase().includes(search.toUpperCase())) {
-                    console.log(songList[version][songIndex]);
                     ss.push(songList[version][songIndex]);
                     setSearchSongs(ss);
                     
@@ -43,6 +49,7 @@ function Search() {
     return (
         <div className="searchcontainer">
             <h1 className='invisible'>Song Search</h1>
+            <p className='invisible'>stuff</p>
             <div className="search invisble">
                 <div className="icon" onClick={() => {
                     document.querySelector('.search').classList.toggle('active');
@@ -55,7 +62,8 @@ function Search() {
             <div className="carddisplay invisible">
                 {searchedSongs.map(song => {
                     return(
-                        <Cards key={song.title} image={song.image} title={song.title} artist={song.artist}/>
+                        <Cards key={song.title} image={song.image} title={song.title} artist={song.artist} version ={song.version}
+                            beginner={song.beginner} basic={song.basic} difficult={song.difficult} expert={song.expert} challenge={song.challenge}/>
                     );
                 })}
             </div>

@@ -1,6 +1,6 @@
 .searchcontainer {
     width: 85%;
-    height: fit-content;
+    height: 600px;
     padding: 20px;
     position: relative;
     margin: 0 auto;
@@ -10,9 +10,7 @@
     border-radius:25px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    
 }
 .searchcontainer h1 {
     font-size:3rem;
