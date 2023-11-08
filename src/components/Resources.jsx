@@ -20,7 +20,7 @@ function Resources() {
         const hiddenElements = document.querySelectorAll('.invisible');
         hiddenElements.forEach((el) => observer.observe(el))
       }, [])
-    const slideStuff = [{
+    const slideStuff = [{ //objects of all the info that goes in each card
         title: "Remywiki",
         description: "A wiki site containing information for most Bemani games",
         direction: "left",
@@ -48,7 +48,7 @@ function Resources() {
         link: "https://docs.google.com/document/d/1FbZOxO50Vmxs33U44rIzEwtSMyqYGl1BJ-8GCg5s_b0/edit#",
         key: "4"
     }]
-    function buttonFunction(e) {
+    function buttonFunction(e) { //function that determines relative position of each card.
         const direction = e.target.classList[1];
         const slides = document.querySelectorAll('.slide');
         let nextSlide;

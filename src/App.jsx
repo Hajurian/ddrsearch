@@ -10,7 +10,7 @@ import Search from './components/Search';
 function App() {
   return (
     <>
-      <div className="container">
+      <div className="container"> 
         <Navbar />
         <span id="anchorabout"></span>
         <div className="aboutbar">

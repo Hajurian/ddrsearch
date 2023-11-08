@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Cards.css'
 function Cards(props) {
     const [isActive, setActive] = useState(false);
-    const toggleActive = () => {
+    const toggleActive = () => { //sets whether the card should be small or full
         setActive(!isActive);
     }
     return(

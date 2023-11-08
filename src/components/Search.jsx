@@ -5,17 +5,17 @@ import Cards from './Cards';
 function Search() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if(entry.isIntersecting) {
-            entry.target.classList.add('show')
-          } else {
-            entry.target.classList.remove('show')
-          }
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show')
+            } else {
+                entry.target.classList.remove('show')
+            }
         })
-      })
-      useEffect(() => {
+    })
+    useEffect(() => {
         const hiddenElements = document.querySelectorAll('.invisible');
         hiddenElements.forEach((el) => observer.observe(el))
-      }, [])
+    }, [])
     const [searchedSongs, setSearchSongs] = useState([]);
     let ss = [];
     const [search, setSearch] = useState("");
@@ -23,24 +23,22 @@ function Search() {
     data.push({ ScrapedData });
     const songList = data[0].ScrapedData; //Song list use [][] to get version , song object and then .property you want
 
-    document.addEventListener("keydown", (e) => {
-        
+    document.addEventListener("keydown", (e) => { //function to make searchbar use enter as well
         if (e.code == 'Enter' && search.length > 0) {
-
             handleSubmit(e);
         }
     })
 
     function handleSubmit(e) {
         e.preventDefault();
-        
+        ss.length = 0;
         for (let version = 0; version < songList.length; version++) {
             for (let songIndex = 0; songIndex < songList[version].length; songIndex++) {
 
-                if (songList[version][songIndex].title.toUpperCase().includes(search.toUpperCase())) {
+                if (songList[version][songIndex].title.toUpperCase().includes(search.toUpperCase())) { //the search for the songs that uses the info from the scraped data
                     ss.push(songList[version][songIndex]);
                     setSearchSongs(ss);
-                    
+
                 }
             }
         }
@@ -49,7 +47,6 @@ function Search() {
     return (
         <div className="searchcontainer">
             <h1 className='invisible'>Song Search</h1>
-            <p className='invisible'>stuff</p>
             <div className="search invisble">
                 <div className="icon" onClick={() => {
                     document.querySelector('.search').classList.toggle('active');
@@ -61,9 +58,9 @@ function Search() {
             </div>
             <div className="carddisplay invisible">
                 {searchedSongs.map(song => {
-                    return(
-                        <Cards key={song.title} image={song.image} title={song.title} artist={song.artist} version ={song.version}
-                            beginner={song.beginner} basic={song.basic} difficult={song.difficult} expert={song.expert} challenge={song.challenge}/>
+                    return (
+                        <Cards key={song.title} image={song.image} title={song.title} artist={song.artist} version={song.version}
+                            beginner={song.beginner} basic={song.basic} difficult={song.difficult} expert={song.expert} challenge={song.challenge} />
                     );
                 })}
             </div>
