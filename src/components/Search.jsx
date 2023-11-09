@@ -28,7 +28,6 @@ function Search() {
             handleSubmit(e);
         }
     })
-
     function handleSubmit(e) {
         e.preventDefault();
         ss.length = 0;
@@ -51,19 +50,21 @@ function Search() {
                 <div className="icon" onClick={() => {
                     document.querySelector('.search').classList.toggle('active');
                 }}></div>
-                <div className="input"><input type="text" id='searchinput' placeholder='enter song name' onChange={(e) => {
+                <div className="input"><input type="text" id='searchinput' placeholder='Enter song name' onChange={(e) => {
                     setSearch(e.target.value);
                 }}></input></div>
                 <span className='submit' onClick={handleSubmit}></span>
             </div>
             <div className="carddisplay invisible">
-                {searchedSongs.map(song => {
+                {searchedSongs.length > 0 ? searchedSongs.map(song => {
                     return (
                         <Cards key={song.title} image={song.image} title={song.title} artist={song.artist} version={song.version}
                             beginner={song.beginner} basic={song.basic} difficult={song.difficult} expert={song.expert} challenge={song.challenge} />
                     );
-                })}
+                }) : <h1 id="searchtext">Click the search icon and enter a song name!</h1>}
+
             </div>
+
         </div>
     );
 }

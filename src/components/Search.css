@@ -1,6 +1,6 @@
 .searchcontainer {
     width: 85%;
-    height: 600px;
+    height: 700px;
     padding: 20px;
     position: relative;
     margin: 0 auto;
@@ -25,6 +25,7 @@
     border-radius: 60px;
     transition: 0.5s;
     overflow:hidden;
+    margin-bottom: 25px;
 }
 .search.active {
     width:360px;
@@ -109,7 +110,41 @@
 }
 .carddisplay {
     width:85%;
+    height:400px;
+    padding-top:15px;
     display:flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap:wrap;
+    overflow:scroll;
+    overflow-x:hidden;
+    border:2px solid #3f44a9;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.carddisplay::-webkit-scrollbar {
+    display: none;
+  }
+  #searchtext {
+    font-size:2rem;
+    display:flex;
+    align-items: center;
+    cursor:pointer;
+    height:fit-content;
+    width:fit-content;
+    padding-top:45px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+        
+	}
 }
