@@ -7,8 +7,8 @@
 }
 .songpickertextcontainer {
     border:1px solid black;
-    width:35%;
-    height:450px;
+    width:25%;
+    height:500px;
     display:flex;
     flex-direction: column;
     padding:2rem 2.5rem;
@@ -20,5 +20,5 @@
 }
 .songpickertextcontainer p {
     font-size:1.5rem;
-    line-height:1.6rem;
+    line-height:1.7rem;
 }
