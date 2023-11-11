@@ -1,12 +1,25 @@
-import { useState } from 'react';
+import ScrapedData from '../songdata.json'
+import Cards from './Cards';
 import './SongPicker.css'
 function SongPicker() {
-    const [selectedVersionsArr, setSelectedVersionsArr] = useState([]);
     let v = [];
+    let chosenVersion= [];
     const versions = ["Any version", "DDR 1st", "DDR 2ndMIX", "DDR 3rdMIX", "DDR 4thMIX", "DDR 5thMIX", "DDRMAX", "DDRMAX2", "DDR EXTREME", "DDR SuperNOVA", "DDR SuperNOVA 2", "DDR X", "DDR X2",
         "DDR X3 VS 2ndMIX", "DanceDanceRevolution (2013)", "DanceDnaceRevolution (2014)", "DanceDanceRevolution A", "DanceDanceRevolution A20",
         "DanceDanceRevolution A20 PLUS", "DanceDanceRevolution A3"];
-    function generateRandom() {
+    const data = [];
+    data.push({ ScrapedData });
+    const songList = data[0].ScrapedData; //Song list use [][] to get version , song object and then .property you want
+    function generateRandom(v) {
+        //figure out what versions are selcted
+        chosenVersion = [];
+        v.forEach((version) => {
+            for (let i = 0; i < songList.length; i++) {
+                if (version == songList[i][0].version) {
+                    chosenVersion.push(version);
+                }
+            }
+        })
     }
     return (
         <div className="songpickercontainer">
@@ -26,23 +39,17 @@ function SongPicker() {
                     </div>
                 </div>
                 <button onClick={() => {
+                    v = [];
                     let selectedVersions = document.querySelectorAll(".selected");
                     selectedVersions.forEach((version) => {
-                        console.log(version.innerText);
                         v.push(version.innerText);
                     })
-                    setSelectedVersionsArr(v);
-                    generateRandom();
+                    generateRandom(v);
                 }}>hello</button>
             </div>
             <div className="randomcards">
                 <h1>Song Selection</h1>
                 <div className="randomcardcontainer">
-                    {selectedVersionsArr.map((version) => {
-                        return (
-                            <h1 key = {`${version}${+ Math.random()*100}`}>{version}</h1>
-                        )
-                    })}
                 </div>
             </div>
         </div>
