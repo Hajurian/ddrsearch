@@ -34,4 +34,12 @@
 .randomcards .randomcardcontainer {
     width:800px;
     height:300px;
+    border:1px solid black;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+.randomcardcontainer .randomcard {
+    
 }

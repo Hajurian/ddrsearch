@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import ScrapedData from '../songdata.json'
-import Cards from './Cards';
 import './SongPicker.css'
+import RandomCards from './RandomCards';
 function SongPicker() {
     let v = [];
-    let chosenVersion= [];
-    const versions = ["Any version", "DDR 1st", "DDR 2ndMIX", "DDR 3rdMIX", "DDR 4thMIX", "DDR 5thMIX", "DDRMAX", "DDRMAX2", "DDR EXTREME", "DDR SuperNOVA", "DDR SuperNOVA 2", "DDR X", "DDR X2",
+    let chosenVersion = [];
+    const [cV, setCV] = useState([]);
+    const [vLength, setVLength] = useState(0);
+    const versions = ["DDR 1st", "DDR 2ndMIX", "DDR 3rdMIX", "DDR 4thMIX", "DDR 5thMIX", "DDRMAX", "DDRMAX2", "DDR EXTREME", "DDR SuperNOVA", "DDR SuperNOVA 2", "DDR X", "DDR X2",
         "DDR X3 VS 2ndMIX", "DanceDanceRevolution (2013)", "DanceDnaceRevolution (2014)", "DanceDanceRevolution A", "DanceDanceRevolution A20",
         "DanceDanceRevolution A20 PLUS", "DanceDanceRevolution A3"];
     const data = [];
@@ -15,10 +18,11 @@ function SongPicker() {
         chosenVersion = [];
         v.forEach((version) => {
             for (let i = 0; i < songList.length; i++) {
-                if (version == songList[i][0].version) {
-                    chosenVersion.push(version);
+                if (songList[i][0].version == version) {
+                    chosenVersion.push(i)
                 }
             }
+            setCV(chosenVersion);
         })
     }
     return (
@@ -44,13 +48,13 @@ function SongPicker() {
                     selectedVersions.forEach((version) => {
                         v.push(version.innerText);
                     })
+                    setVLength(v.length);
                     generateRandom(v);
                 }}>hello</button>
             </div>
             <div className="randomcards">
-                <h1>Song Selection</h1>
-                <div className="randomcardcontainer">
-                </div>
+                <h1>Song Selection</h1> 
+                {vLength > 0 ? <RandomCards versions={cV}/> : null}
             </div>
         </div>
     )
