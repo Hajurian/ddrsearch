@@ -6,7 +6,6 @@
     display:flex;
 }
 .songpickertextcontainer {
-    border:1px solid black;
     width:25%;
     height:500px;
     display:flex;
@@ -33,7 +32,7 @@
 }
 .randomcards .randomcardcontainer {
     width:800px;
-    height:300px;
+    height:500px;
     border:1px solid black;
     display:flex;
     flex-direction: row;
@@ -41,5 +40,41 @@
     flex-wrap:wrap;
 }
 .randomcardcontainer .randomcard {
-    
+    width:300px;
+    height:95px;
+    border:1px solid #3f44a9;
+    border-radius:10px;
+    margin-bottom:25px;
+    margin-left:25px;
+    margin-right:25px;
+    margin-top:40px;
+    background: rgb(157,191,219);
+    background: radial-gradient(circle, rgba(157,191,219,1) 0%, rgba(101,153,203,1) 100%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow:auto;
+    overflow-x:hidden;
+    position: relative;
+    cursor:pointer;
+    transition: all .5s;
+}
+.randomcardcontainer .randomcard:hover {
+    transform: scale(1.1);
+}
+.randomcard .title {
+    display:flex;
+    justify-content: center;
+    padding:auto;
+    margin-top:15px;
+    color:white;
+    font-size:1.2rem;
+    font-weight:600;
+}
+.randomcard .topcard {
+    display: flex;
+    flex-direction: row;
+}
+.randomcard .thumbnail {
+    margin:10px;
+    border:1px solid black;
+
 }
