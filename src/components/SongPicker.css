@@ -1,7 +1,6 @@
 .songpickercontainer {
     width:85%;
     height:inherit;
-    border:1px solid brown;
     margin:0 auto;
     display:flex;
 }
@@ -30,10 +29,13 @@
     flex-direction: column;
     align-items: center;
 }
+.randomcards h1 {
+    color:#2a2d34;
+    font-size:4rem;
+}
 .randomcards .randomcardcontainer {
     width:800px;
     height:500px;
-    border:1px solid black;
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -77,4 +79,40 @@
     margin:10px;
     border:1px solid black;
 
+}
+.difficultyinputs {
+    display:flex;
+    flex-direction: column;
+    width:175px;
+    height:300px;
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+.difficultyinputs label {
+    font-size:1.2rem;
+    color:#2a2d34;
+    font-weight:500;
+}
+.difficultyinputs .mininput {
+    height:30px;
+    font-size:1rem;
+    margin-bottom:25px;
+}
+.difficultyinputs .maxinput {
+    height:30px;
+}
+.submitbutton {
+    position: relative;
+    width:180px;
+    height:150px;
+    background: rgb(63,68,169);
+    border:none;
+    border-radius:25px;
+    cursor: pointer;
+    opacity: 0.8;
+    color:#fff;
+    font-size:1.5rem;
+    line-height:2rem;
+    text-align: center;
+    transition: all 0.5s;
 }

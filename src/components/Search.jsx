@@ -46,7 +46,7 @@ function Search() {
     return (
         <div className="searchcontainer">
             <h1 className='invisible'>Song Search</h1>
-            <div className="search invisble">
+            <div className="search invisible">
                 <div className="icon" onClick={() => {
                     document.querySelector('.search').classList.toggle('active');
                 }}></div>

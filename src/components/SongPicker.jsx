@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ScrapedData from '../songdata.json'
 import './SongPicker.css'
 import RandomCards from './RandomCards';
 function SongPicker() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show')
+            } else {
+                entry.target.classList.remove('show')
+            }
+        })
+    })
+    useEffect(() => {
+        const hiddenElements = document.querySelectorAll('.invisible');
+        hiddenElements.forEach((el) => observer.observe(el))
+    }, [])
     let v = [];
     let chosenVersion = [];
     const [cV, setCV] = useState([]);
     const [vLength, setVLength] = useState(0);
+    const [min, setMin] = useState();
+    const [max, setMax] = useState();
     const versions = ["DDR 1st", "DDR 2ndMIX", "DDR 3rdMIX", "DDR 4thMIX", "DDR 5thMIX", "DDRMAX", "DDRMAX2", "DDR EXTREME", "DDR SuperNOVA", "DDR SuperNOVA 2", "DDR X", "DDR X2",
         "DDR X3 VS 2ndMIX", "DanceDanceRevolution (2013)", "DanceDnaceRevolution (2014)", "DanceDanceRevolution A", "DanceDanceRevolution A20",
         "DanceDanceRevolution A20 PLUS", "DanceDanceRevolution A3"];
@@ -42,7 +57,20 @@ function SongPicker() {
                         })}
                     </div>
                 </div>
-                <button onClick={() => {
+                <div className="difficultyinputs">
+                    <label htmlFor="mininput">Minimum level</label>
+                    <input type="text" className="mininput" onChange={(e) => {
+                        setMin(e.target.value);
+                        
+                    }}/>
+                    <label htmlFor="maxinput">Maximum level</label>
+                    <input type="text" className="maxinput" onChange={(e) => {
+                        setMax(e.target.value);
+                        
+                    }}/>
+                </div>
+
+                <button className="submitbutton" onClick={() => {
                     v = [];
                     let selectedVersions = document.querySelectorAll(".selected");
                     selectedVersions.forEach((version) => {
@@ -50,11 +78,11 @@ function SongPicker() {
                     })
                     setVLength(v.length);
                     generateRandom(v);
-                }}>hello</button>
+                }}>Search</button>
             </div>
             <div className="randomcards">
-                <h1>Song Selection</h1> 
-                {vLength > 0 ? <RandomCards versions={cV}/> : null}
+                <h1>Song Selection</h1>
+                {vLength > 0 ? <RandomCards versions={cV} /> : null}
             </div>
         </div>
     )
