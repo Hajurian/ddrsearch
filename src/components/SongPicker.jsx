@@ -60,13 +60,11 @@ function SongPicker() {
                 <div className="difficultyinputs">
                     <label htmlFor="mininput">Minimum level</label>
                     <input type="text" className="mininput" placeholder='Enter level 1-19' onChange={(e) => {
-                        setMin(e.target.value);
-                        
+                        setMin(e.target.value)
                     }}/>
                     <label htmlFor="maxinput">Maximum level</label>
                     <input type="text" className="maxinput" placeholder='Enter level 1-19' onChange={(e) => {
-                        setMax(e.target.value);
-                        
+                        setMax(e.target.value)
                     }}/>
                 </div>
 
@@ -80,11 +78,12 @@ function SongPicker() {
                     })
                     setVLength(v.length);
                     generateRandom(v);
+                    
                 }}>Search</button>
             </div>
             <div className="randomcards">
                 <h1>Song Selection</h1>
-                {vLength > 0 ? <RandomCards versions={cV} min={min} max={max}/> : null}
+                {vLength > 0 ? <RandomCards versions={cV} /> : null}
             </div>
         </div>
     )
