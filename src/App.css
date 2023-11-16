@@ -95,6 +95,7 @@
     height:50px;
     background: rgb(63,68,169);
     border:none;
+    border-radius:3px;
     cursor: pointer;
     opacity: 0.8;
     color:#fff;

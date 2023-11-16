@@ -4,6 +4,7 @@ function RandomCards(props) {
     data.push({ ScrapedData });
     const songList = data[0].ScrapedData;
     const songs = [];
+    let count = 5;
     for (let i = 0; i < 5; i++) {
         let v = props.versions[Math.floor(Math.random() * props.versions.length)]
         songs.push(songList[v][Math.floor(Math.random() * songList[v].length)]);

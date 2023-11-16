@@ -13,7 +13,7 @@ function SongPicker() {
         })
     })
     useEffect(() => {
-        const hiddenElements = document.querySelectorAll('.invisible');
+        const hiddenElements = document.querySelectorAll('.invisiblemove');
         hiddenElements.forEach((el) => observer.observe(el))
     }, [])
     let v = [];
@@ -42,7 +42,7 @@ function SongPicker() {
     }
     return (
         <div className="songpickercontainer">
-            <div className="songpickertextcontainer">
+            <div className="songpickertextcontainer invisiblemove">
                 <h1>Song Picker</h1>
                 <p>Randomly generate five songs to play in your next set. Select the version and difficulties you want included in your selection below.</p>
                 <div className="dropdown">
@@ -59,18 +59,20 @@ function SongPicker() {
                 </div>
                 <div className="difficultyinputs">
                     <label htmlFor="mininput">Minimum level</label>
-                    <input type="text" className="mininput" onChange={(e) => {
+                    <input type="text" className="mininput" placeholder='Enter level 1-19' onChange={(e) => {
                         setMin(e.target.value);
                         
                     }}/>
                     <label htmlFor="maxinput">Maximum level</label>
-                    <input type="text" className="maxinput" onChange={(e) => {
+                    <input type="text" className="maxinput" placeholder='Enter level 1-19' onChange={(e) => {
                         setMax(e.target.value);
                         
                     }}/>
                 </div>
 
                 <button className="submitbutton" onClick={() => {
+                    const randomcards = document.getElementsByClassName('randomcards')[0];
+                    randomcards.classList.add('show');
                     v = [];
                     let selectedVersions = document.querySelectorAll(".selected");
                     selectedVersions.forEach((version) => {
@@ -82,7 +84,7 @@ function SongPicker() {
             </div>
             <div className="randomcards">
                 <h1>Song Selection</h1>
-                {vLength > 0 ? <RandomCards versions={cV} /> : null}
+                {vLength > 0 ? <RandomCards versions={cV} min={min} max={max}/> : null}
             </div>
         </div>
     )
