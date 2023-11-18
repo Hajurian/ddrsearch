@@ -19,9 +19,8 @@ function SongPicker() {
     let v = [];
     let chosenVersion = [];
     const [cV, setCV] = useState([]);
+    const [minMax, setMinMax] = useState([]);
     const [vLength, setVLength] = useState(0);
-    const [min, setMin] = useState();
-    const [max, setMax] = useState();
     const versions = ["DDR 1st", "DDR 2ndMIX", "DDR 3rdMIX", "DDR 4thMIX", "DDR 5thMIX", "DDRMAX", "DDRMAX2", "DDR EXTREME", "DDR SuperNOVA", "DDR SuperNOVA 2", "DDR X", "DDR X2",
         "DDR X3 VS 2ndMIX", "DanceDanceRevolution (2013)", "DanceDnaceRevolution (2014)", "DanceDanceRevolution A", "DanceDanceRevolution A20",
         "DanceDanceRevolution A20 PLUS", "DanceDanceRevolution A3"];
@@ -39,6 +38,10 @@ function SongPicker() {
             }
             setCV(chosenVersion);
         })
+    }
+    function getDifficultyRange(min, max) {
+        let temp = [min, max];
+        setMinMax(temp);
     }
     return (
         <div className="songpickercontainer">
@@ -58,14 +61,10 @@ function SongPicker() {
                     </div>
                 </div>
                 <div className="difficultyinputs">
-                    <label htmlFor="mininput">Minimum level</label>
-                    <input type="text" className="mininput" placeholder='Enter level 1-19' onChange={(e) => {
-                        setMin(e.target.value)
-                    }}/>
-                    <label htmlFor="maxinput">Maximum level</label>
-                    <input type="text" className="maxinput" placeholder='Enter level 1-19' onChange={(e) => {
-                        setMax(e.target.value)
-                    }}/>
+                    <label>Minimum level</label>
+                    <input type="text" className="mininput" placeholder='Enter level 1-19'/>
+                    <label>Maximum level</label>
+                    <input type="text" className="maxinput" placeholder='Enter level 1-19'/>
                 </div>
 
                 <button className="submitbutton" onClick={() => {
@@ -78,12 +77,12 @@ function SongPicker() {
                     })
                     setVLength(v.length);
                     generateRandom(v);
-                    
+                    getDifficultyRange((document.querySelector('.mininput').value), (document.querySelector('.maxinput').value));
                 }}>Search</button>
             </div>
             <div className="randomcards">
                 <h1>Song Selection</h1>
-                {vLength > 0 ? <RandomCards versions={cV} /> : null}
+                {vLength > 0 ? <RandomCards versions={cV} min={minMax[0]} max={minMax[1]}/> : null}
             </div>
         </div>
     )

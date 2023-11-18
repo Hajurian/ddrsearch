@@ -6,30 +6,61 @@ function RandomCards(props) {
     const songs = [];
     const songsDiff=[];
     let count = 1;
-    
     while (count <= 5) {
         let version = props.versions[Math.floor(Math.random() * props.versions.length)];
         let potentialsong = songList[version][Math.floor(Math.random() * songList[version].length)];
-        songs.push(potentialsong);
-        count++;
+        
+        if (hasDifficulty(potentialsong) == null) {
+            continue;
+        } else {
+            songs.push(potentialsong);
+            count++;
+        }
+
+    }
+    function hasDifficulty(song) {
+        let potentialDiffs = [];
+        if (parseInt(song.beginner) >= props.min && parseInt(song.beginner) <= props.max) {
+            potentialDiffs.push("beginner");
+        }
+        if (parseInt(song.basic) >= props.min && parseInt(song.basic) <= props.max) {
+            potentialDiffs.push("basic");
+        }
+        if (parseInt(song.difficult) >= props.min && parseInt(song.difficult) <= props.max) {
+            potentialDiffs.push("difficult");
+        }
+        if (parseInt(song.expert) >= props.min && parseInt(song.expert) <= props.max) {
+            potentialDiffs.push("expert");
+        }
+        if (parseInt(song.challenge) >= props.min && parseInt(song.challenge) <= props.max) {
+            potentialDiffs.push("challenge");
+        }
+        
+        if (potentialDiffs.length == 0) {
+            return null;
+        }
+        return potentialDiffs[Math.floor(Math.random() * potentialDiffs.length)]
+        
+        
+        
     }
     function RandomCard(props) {
         return (
             <div className="randomcard">
                 <div className="topcard">
                     <img className="thumbnail" src={props.image}></img>
-                    <h1 className="title">{props.title}</h1>
+                    <h1 className="title">{props.title} {props.difficulty}</h1>
                 </div>
             </div>
         )
     }
     return(
         <div className="randomcardcontainer">
-            <RandomCard image={songs[0].image} title={songs[0].title} />
-            <RandomCard image={songs[1].image} title={songs[1].title} />
-            <RandomCard image={songs[2].image} title={songs[2].title} />
-            <RandomCard image={songs[3].image} title={songs[3].title} />
-            <RandomCard image={songs[4].image} title={songs[4].title} />
+            <RandomCard image={songs[0].image} title={songs[0].title} difficulty={songsDiff[0]}/>
+            <RandomCard image={songs[1].image} title={songs[1].title} difficulty={songsDiff[1]}/>
+            <RandomCard image={songs[2].image} title={songs[2].title} difficulty={songsDiff[2]}/>
+            <RandomCard image={songs[3].image} title={songs[3].title} difficulty={songsDiff[3]}/>
+            <RandomCard image={songs[4].image} title={songs[4].title} difficulty={songsDiff[4]}/>
         </div>
     )
 }
