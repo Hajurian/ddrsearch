@@ -36,10 +36,21 @@ function SongPicker() {
                     chosenVersion.push(i)
                 }
             }
-            setCV(chosenVersion);
         })
+        if (chosenVersion.length == 0) {
+            chosenVersion.push(29)
+            chosenVersion.push(30)
+        }
+        
+        setCV(chosenVersion);
     }
     function getDifficultyRange(min, max) {
+        if(min == '') {
+            min = 1;
+        }
+        if (max == '') {
+            max = 19;
+        }
         let temp = [min, max];
         setMinMax(temp);
     }
@@ -47,7 +58,7 @@ function SongPicker() {
         <div className="songpickercontainer">
             <div className="songpickertextcontainer invisiblemove">
                 <h1>Song Picker</h1>
-                <p>Randomly generate five songs to play in your next set. Select the version and difficulties you want included in your selection below.</p>
+                <p>Randomly generate five songs to play in your next set. Select the version and difficulties you want included in your selection below. <br></br>(A3 and 1 - 19 by default.)</p>
                 <div className="dropdown">
                     <button id="selectedbutton">Select Versions</button>
                     <div className="dropdowncontent">
@@ -78,11 +89,11 @@ function SongPicker() {
                     setVLength(v.length);
                     generateRandom(v);
                     getDifficultyRange((document.querySelector('.mininput').value), (document.querySelector('.maxinput').value));
-                }}>Search</button>
+                }}>Generate</button>
             </div>
             <div className="randomcards">
                 <h1>Song Selection</h1>
-                {vLength > 0 ? <RandomCards versions={cV} min={minMax[0]} max={minMax[1]}/> : null}
+                {cV.length > 0 ? <RandomCards versions={cV} min={minMax[0]} max={minMax[1]}/> : null}
             </div>
         </div>
     )
