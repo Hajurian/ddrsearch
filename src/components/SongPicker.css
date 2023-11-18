@@ -81,6 +81,11 @@
 .randomcardcontainer .randomcard:hover {
     transform: scale(1.1);
 }
+.error h1{
+    color:red;
+    font-size:2rem;
+    transition: 1s all;
+}
 .randomcard .title {
     display:flex;
     justify-content: center;

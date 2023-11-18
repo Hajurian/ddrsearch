@@ -6,17 +6,18 @@ function RandomCards(props) {
     const songs = [];
     const songsDiff=[];
     let count = 1;
-    while (count <= 5) {
+    let nullCheck = 0;
+    while (count <= 5 && nullCheck < 100) {
         let version = props.versions[Math.floor(Math.random() * props.versions.length)];
         let potentialsong = songList[version][Math.floor(Math.random() * songList[version].length)];
         
         if (hasDifficulty(potentialsong) == null) {
+            nullCheck++;
             continue;
         } else {
             songs.push(potentialsong);
             count++;
         }
-
     }
     function hasDifficulty(song) {
         let potentialDiffs = [];
@@ -57,15 +58,23 @@ function RandomCards(props) {
             </div>
         )
     }
-    return(
-        <div className="randomcardcontainer">
-            <RandomCard image={songs[0].image} title={songs[0].title} difficulty={songsDiff[0]}/>
-            <RandomCard image={songs[1].image} title={songs[1].title} difficulty={songsDiff[1]}/>
-            <RandomCard image={songs[2].image} title={songs[2].title} difficulty={songsDiff[2]}/>
-            <RandomCard image={songs[3].image} title={songs[3].title} difficulty={songsDiff[3]}/>
-            <RandomCard image={songs[4].image} title={songs[4].title} difficulty={songsDiff[4]}/>
-        </div>
-    )
+    if (nullCheck < 100) {
+        return(
+            <div className="randomcardcontainer">
+                <RandomCard image={songs[0].image} title={songs[0].title} difficulty={songsDiff[0]}/>
+                <RandomCard image={songs[1].image} title={songs[1].title} difficulty={songsDiff[1]}/>
+                <RandomCard image={songs[2].image} title={songs[2].title} difficulty={songsDiff[2]}/>
+                <RandomCard image={songs[3].image} title={songs[3].title} difficulty={songsDiff[3]}/>
+                <RandomCard image={songs[4].image} title={songs[4].title} difficulty={songsDiff[4]}/>
+            </div>
+        )
+    } else {
+        return (
+            <div className="error">
+                <h1>This version does not contain a difficulty within {props.min} and {props.max}</h1>
+            </div>
+        )
+    }
 }
 
 export default RandomCards;
