@@ -148,3 +148,13 @@
         
 	}
 }
+@media (max-width:980px) {
+    #searchtext {
+        font-size:1.8rem;
+    }
+}
+@media (max-width:490px) {
+    .search.active {
+        width:300px;
+    }
+}
