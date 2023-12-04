@@ -5,7 +5,7 @@
     display:flex;
 }
 .songpickertextcontainer {
-    width:25%;
+    width:400px;
     height:650px;
     display:flex;
     flex-direction: column;
@@ -18,14 +18,14 @@
     margin-bottom:0;
 }
 .songpickertextcontainer p {
-    font-size:1.5rem;
+    font-size:1.4rem;
     line-height:1.7rem;
 }
 .randomcards {
     width:900px;
     height:500px;
-    padding:1rem 2.5rem;
-    margin-left:25px;
+    padding:1rem 2rem;
+    margin-left:0px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -157,4 +157,10 @@
 }
 .submitbutton:hover {
     opacity: 1;
+}
+@media (max-width:1500px) {
+    .songpickertextcontainer p {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+    }
 }

@@ -157,4 +157,8 @@
     .search.active {
         width:300px;
     }
+    #searchtext {
+        font-size: 1.3rem;
+        padding-left:15px;
+    }
 }
