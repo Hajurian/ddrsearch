@@ -5,7 +5,7 @@
     display:flex;
 }
 .songpickertextcontainer {
-    width:400px;
+    width:25%;
     height:650px;
     display:flex;
     flex-direction: column;
@@ -22,7 +22,7 @@
     line-height:1.7rem;
 }
 .randomcards {
-    width:900px;
+    width:55%;
     height:500px;
     padding:1rem 2rem;
     margin-left:0px;

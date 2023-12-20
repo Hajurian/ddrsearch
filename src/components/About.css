@@ -31,7 +31,7 @@
     position: relative;
     transform: scale(1.1);
     right:15%;
-    top:-5%;
+    top:-10%;
     opacity: 0.75;
     transform: rotate(45deg);
     animation: arrowmove 2s infinite;
