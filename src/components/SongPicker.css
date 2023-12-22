@@ -44,7 +44,7 @@
     font-size:4rem;
 }
 .randomcards .randomcardcontainer {
-    width:800px;
+    width:100%;
     height:500px;
     display:flex;
     flex-direction: row;
@@ -162,5 +162,8 @@
     .songpickertextcontainer p {
         font-size: 1.2rem;
         line-height: 1.3rem;
+    }
+    .songpickertextcontainer h1 {
+        font-size: 3rem;
     }
 }

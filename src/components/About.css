@@ -5,6 +5,7 @@
     background: radial-gradient(circle, rgba(193,196,228,1) 18%, rgba(128,198,235,1) 100%);
     display:flex;
     overflow:hidden;
+    padding-top: 80px;
 }
 .aboutcontent {
     position: relative;
@@ -35,6 +36,7 @@
     opacity: 0.75;
     transform: rotate(45deg);
     animation: arrowmove 2s infinite;
+    z-index: 1;
 }
 @keyframes arrowmove {
     0% {
