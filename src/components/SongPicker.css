@@ -23,7 +23,7 @@
 }
 .randomcards {
     width:55%;
-    height:500px;
+    height:700px;
     padding:1rem 2rem;
     margin-left:0px;
     display:flex;
@@ -45,12 +45,16 @@
 }
 .randomcards .randomcardcontainer {
     width:100%;
-    height:500px;
+    height:100%;
     display:flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap:wrap;
+    overflow:auto;
 }
+.randomcardcontainer::-webkit-scrollbar {
+    display: none;
+  }
 .randomcardcontainer .randomcard {
     width:300px;
     height:120px;
@@ -69,7 +73,6 @@
     position: relative;
     cursor:pointer;
     transition: all .5s;
-    overflow:auto;
 }
 .randomcard::-webkit-scrollbar {
     display: none;
@@ -165,5 +168,22 @@
     }
     .songpickertextcontainer h1 {
         font-size: 3rem;
+    }
+}
+@media (max-width:1080px) {
+    .randomcards h1 {
+        font-size:3rem;
+    }
+}
+@media (max-width:800px) {
+    .randomcardcontainer .randomcard {
+        width:250px;
+        
+    }
+    .randomcards h1 {
+        font-size:2.5rem;
+    }
+    .songpickertextcontainer {
+        margin-left:50px;
     }
 }
