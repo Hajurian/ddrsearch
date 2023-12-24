@@ -1,4 +1,4 @@
-**DDR SEARCH** <br>
+<h1>DDR SEARCH</h1><br>
 A website made to act as a central location for important documents, wikis, and apps for all things DDR related.
 
 DDR Search was made using React JS was solely developed by me. There are five main components to this website that will have their function and development process documented below. DDR Search is my first attempt at a front end project and was my first largescale project. I learned many things including how to use state and effect in react, important CSS rules like flexbox, and media queries. This website does utilize media queries but I would say they are only functional to about 1300px width. Any device that has a viewport smaller than 1300px will likely see a very broken website.
