@@ -10,7 +10,7 @@ function Footer() {
                     <br></br>
                     With that being said, I'd like to thank my girlfriend, Katie, for helping me design this website (she picked the colors and helped with layouts).
                     <br></br>
-                    Some of my other work can be found <a href="https://github.com/Hajurian">here</a>
+                    Some of my other work can be found <a href="https://github.com/Hajurian">here</a> - Julian
                     <br></br>
                 </p>
             </div>
